@@ -89,14 +89,12 @@ void waybar::modules::Custom::refresh(int sig) {
   if (sig == SIGRTMIN + config_["signal"].asInt()) {
     if (thread_.isRunning()) {
       thread_.wake_up();
+    } else if (interval_.count() > 0) {
+      delayWorker();
+    } else if (config_["exec"].isString()) {
+      continuousWorker();
     } else {
-      if (interval_.count() > 0) {
-        delayWorker();
-      } else if (config_["exec"].isString()) {
-        continuousWorker();
-      } else {
-        dp.emit();
-      }
+      dp.emit();
     }
   }
 }
