@@ -15,3 +15,7 @@ inline std::string rtrim(const std::string& s) {
 }
 
 inline std::string trim(const std::string& s) { return rtrim(ltrim(s)); }
+
+inline bool starts_with(std::string_view s, std::string_view prefix) {
+    return s.size() >= prefix.size() && s.substr(0, prefix.size()) == prefix;
+}
