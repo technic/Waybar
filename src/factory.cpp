@@ -19,6 +19,9 @@ waybar::AModule* waybar::Factory::makeModule(const std::string& name) const {
     if (ref == "sway/workspaces") {
       return new waybar::modules::sway::Workspaces(id, bar_, config_[name]);
     }
+    if (ref == "sway/workspace_tasks") {
+      return new waybar::modules::sway::WorkspaceTasks(id, bar_, config_[name]);
+    }
     if (ref == "sway/window") {
       return new waybar::modules::sway::Window(id, bar_, config_[name]);
     }

@@ -10,6 +10,7 @@
 #include "modules/sway/mode.hpp"
 #include "modules/sway/window.hpp"
 #include "modules/sway/workspaces.hpp"
+#include "modules/sway/workspace_tasks.hpp"
 #include "modules/sway/language.hpp"
 #endif
 #ifdef HAVE_WLR
