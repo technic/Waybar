@@ -289,9 +289,6 @@ class WorkspaceTasksImpl {
     Workspace(const Workspace &) = delete;
     Workspace &operator=(const Workspace &) = delete;
 
-    template <typename F>
-    void connect_clicked(F &&callback) {}
-
     bool enter(GdkEventCrossing *) {
       content.set_state_flags(Gtk::STATE_FLAG_PRELIGHT);
       return true;
